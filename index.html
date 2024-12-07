@@ -5,10 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Redirecting...</title>
 <script>
-    const targetUrl = 'https://ja.wikipedia.org/wiki/'; // 替换为您的目标链接
-    document.addEventListener('DOMContentLoaded', () => {
-        window.location.href = targetUrl;
-    });
+    const targetUrl = 'https://ja.wikipedia.org/wiki/'; // 替换为目标 URL
+    window.location.replace(targetUrl); // 使用 replace 方法，跳转后不会留下历史记录
 </script>
 </head>
 <body>
