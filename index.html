@@ -1,43 +1,17 @@
-<!DOCTYPE html>      
-<html lang="en">      
-<head>      
-<meta charset="UTF-8">      
-<meta name="viewport" content="width=device-width, initial-scale=1.0">      
-<title>Webサイトの安全なジャンプ中...</title>      
-<script>      
-      const domainList = [      
-            'https://test.ustc.edu.cn//api/jumpSite?siteName=joe1', // 通常这里会有不同的API URL  
-          // ... 添加更多不同的API URL      
-      ];      
-    
-      function getRandomDomain() {    
-          const length = domainList.length;      
-          const randomIndex = Math.floor(Math.random() * length);      
-          return domainList[randomIndex];      
-      }    
-    
-      async function handleRedirect(someURLToRedirectTo) {      
-        try {    
-          const response = await fetch(someURLToRedirectTo);    
-          if (!response.ok) {    
-            throw new Error('Failed to fetch the redirect URL');    
-          }    
-          const result = await response.json();    
-          window.location.href = result.data.siteUrl; // 假设API返回的数据结构是 { data: { siteUrl: '重定向到的URL' } }  
-        } catch (error) {    
-          console.error('Error:', error);    
-          // 在这里可以添加错误处理逻辑，比如显示一个错误消息给用户    
-        }    
-      }    
-    
-      document.addEventListener('DOMContentLoaded', (event) => {      
-          const randomDomain = getRandomDomain();    
-          handleRedirect(randomDomain); // 页面加载完成后立即执行重定向逻辑    
-      });    
-</script>      
-</head>      
-<body>      
-  <!-- 页面内容（如果有的话） -->      
-  <p>Webサイトの安全なジャンプ中...</p>      
-</body>      
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redirecting...</title>
+<script>
+    const targetUrl = 'https://ja.wikipedia.org/wiki/'; // 替换为您的目标链接
+    document.addEventListener('DOMContentLoaded', () => {
+        window.location.href = targetUrl;
+    });
+</script>
+</head>
+<body>
+  <p>Redirecting to your destination...</p>
+</body>
 </html>
